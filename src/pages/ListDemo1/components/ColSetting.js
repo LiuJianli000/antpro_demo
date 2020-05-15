@@ -30,7 +30,7 @@ class ColSetting extends Component {
 
   componentDidUpdate(prevProps, prevStates) {
     if (prevStates.selectedList.length !== this.state.selectedList.length) {
-      this.props.change(this.state.selectedList)
+      this.props.colChange(this.state.selectedList)
     }
   }
 
@@ -85,11 +85,12 @@ class ColSetting extends Component {
         <Tooltip title='列设置'>
           <Popover
             placement="bottomRight"
+            arrowPointAtCenter="true"
+            overlayStyle={{ width: '150px' }}
             trigger="click"
             title={
-              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <div>
                 <Checkbox onChange={this.showAll} checked={isSelectAll} indeterminate={indeterminate}>列展示</Checkbox>
-                <a>重置</a>
               </div>
             }
             content={
@@ -97,7 +98,7 @@ class ColSetting extends Component {
                 <Checkbox.Group
                   value={selectedList}
                   onChange={this.handleSelect}
-                >
+                  >
                   <Row gutter={ 16 }>
                     {columns.length &&
                       columns.map(item =>
@@ -110,7 +111,7 @@ class ColSetting extends Component {
                 </Checkbox.Group>
               </div>
             }
-          >
+            >
             <SettingOutlined style={{ fontSize: '18px' }} />
           </Popover>
         </Tooltip>

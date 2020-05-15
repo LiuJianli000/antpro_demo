@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Table, Card } from 'antd'
 import ColSetting from './components/ColSetting'
 
+// 默认的 表头列数据
 const initColumns = [
   {
     title: '名字',
@@ -22,7 +23,7 @@ const initColumns = [
 
 class ListDemo1 extends Component {
   state = {
-    columns: [],
+    columns: [],  // 渲染到 Table 的列，初始为空
     data: [
       {
         id: 1,
@@ -54,7 +55,8 @@ class ListDemo1 extends Component {
     return (
       <Card>
         <div style={{ textAlign: 'right', marginBottom: '5px' }}>
-          <ColSetting columns={initColumns} change={(val) => this.handleColChange(val)}/>          
+          {/* 引用列设置组件：参数：默认的列数据（initColumns），回调函数（当组件中的列发生变化时调用，设置列） */}
+          <ColSetting columns={initColumns} colChange={(val) => this.handleColChange(val)}/>          
         </div>
         <Table
           rowKey='id'
