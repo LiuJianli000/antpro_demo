@@ -50,4 +50,5 @@ export default {
   'menu.editor.mind': '脑图编辑器',
   'menu.editor.koni': '拓扑编辑器',
   'menu.可选择列表格': '可选择列表格',
+  'menu.HOOK': 'HOOK',
 };

@@ -56,12 +56,6 @@ export default defineConfig({
               component: './Welcome',
             },
             {
-              path: '/list_demo1',
-              name: '可选择列表格',
-              icon: 'block',
-              component: './ListDemo1'
-            },
-            {
               path: '/admin',
               name: 'admin',
               icon: 'crown',
@@ -82,6 +76,18 @@ export default defineConfig({
               icon: 'table',
               path: '/list',
               component: './ListTableList',
+            },
+            {
+              path: '/list_demo1',
+              name: '可选择列表格',
+              icon: 'block',
+              component: './ListDemo1'
+            },
+            {
+              path: '/hook_demo1',
+              name: 'HOOK',
+              icon: 'block',
+              component: './Hook'
             },
             {
               component: './404',
