@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Table, Card } from 'antd'
 import ColSetting from './components/ColSetting'
+import SearchBar from './components/SearchBar'
 
 // 默认的 表头列数据
 const initColumns = [
@@ -66,31 +67,36 @@ class ListDemo1 extends Component {
   render() {
     const { data, columns, total, page, pageSize } = this.state
     return (
-      <Card>
-        <div style={{ textAlign: 'right', marginBottom: '5px' }}>
-          {/* 引用列设置组件：参数：默认的列数据（initColumns），回调函数（当组件中的列发生变化时调用，设置列） */}
-          <ColSetting columns={initColumns} colChange={(val) => this.handleColChange(val)}/>          
-        </div>
-        <Table
-          rowKey='id'
-          columns={columns}
-          dataSource={data}
-          onChange={this.handleTableChange}
-          bordered
-          style={{ marginTop: 20 }}
-          pagination={{
-            total,
-            current: page,
-            pageSize,
-            pageSizeOptions: ['5', '10', '15', '20'],
-            showSizeChanger: true,
-            showQuickJumper: true,
-            showTotal: totals => (
-              <p style={{ position: 'absolute', left: 0 }}>总共有 {totals} 条记录</p>
-            ),
-          }}
-        />
-      </Card>
+      <>
+        <Card>
+          <SearchBar />
+        </Card>
+        <Card style={{ marginTop: '15px' }}>
+          <div style={{ textAlign: 'right' }}>
+            {/* 引用列设置组件：参数：默认的列数据（initColumns），回调函数（当组件中的列发生变化时调用，设置列） */}
+            <ColSetting columns={initColumns} colChange={(val) => this.handleColChange(val)} />
+          </div>
+          <Table
+            rowKey='id'
+            columns={columns}
+            dataSource={data}
+            onChange={this.handleTableChange}
+            bordered
+            style={{ marginTop: 20 }}
+            pagination={{
+              total,
+              current: page,
+              pageSize,
+              pageSizeOptions: ['5', '10', '15', '20'],
+              showSizeChanger: true,
+              showQuickJumper: true,
+              showTotal: totals => (
+                <p style={{ position: 'absolute', left: 0 }}>总共有 {totals} 条记录</p>
+              ),
+            }}
+          />
+        </Card>
+      </>
     )
   }
 }
