@@ -41,12 +41,13 @@ class ColSetting extends Component {
     if (isSelectAll) {
       this.setState({
         isSelectAll: val,
-        selectedList: [],
         indeterminate: false,
+        selectedList: [],
       })
     } else {
       this.setState({
         isSelectAll: val,
+        indeterminate: false,
         selectedList: allList
       })
     }
@@ -60,12 +61,14 @@ class ColSetting extends Component {
     const { selectedList, allList } = this.state
     if (selectedList.length > 0 && selectedList.length < allList.length) {
       this.setState({
+        isSelectAll: false,
         indeterminate: true
       })
     }
     if (selectedList.length === allList.length) {
       this.setState({
-        isSelectAll: true
+        isSelectAll: true,
+        indeterminate: false
       })
     }
     if (selectedList.length === 0) {
