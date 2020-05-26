@@ -90,6 +90,12 @@ export default defineConfig({
               component: './Hook'
             },
             {
+              path: '/drag',
+              name: '拖拽',
+              icon: 'block',
+              component: './DragElement'
+            },
+            {
               component: './404',
             },
           ],
