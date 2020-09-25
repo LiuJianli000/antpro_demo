@@ -110,5 +110,4 @@ function postRule(req, res, u, b) {
 export default {
   'GET /api/test': getList,
   'POST /api/test': postRule,
-  'DELETE /api/test': postRule,
 }
