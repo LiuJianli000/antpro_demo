@@ -1,25 +1,38 @@
 import { parse } from 'url';
+import Mock from 'mockjs'
 
 // mock tableListDataSource
-const genList = (current, pageSize) => {
-  const tableListDataSource = [];
+// const genList = (current, pageSize) => {
+//   const tableListDataSource = [];
 
-  for (let i = 0; i < pageSize; i += 1) {
-    const index = (current - 1) * 10 + i;
-    tableListDataSource.push({
-      id: index,
-      name: `我是编号 ${index}`,
-      desc: '这是一段描述',
-      updatedAt: new Date(),
-      createdAt: new Date(),
-    });
-  }
+//   for (let i = 0; i < pageSize; i += 1) {
+//     const index = (current - 1) * 10 + i;
+//     tableListDataSource.push({
+//       id: index,
+//       name: `我是编号 ${index}`,
+//       desc: '这是一段描述',
+//       updatedAt: new Date(),
+//       createdAt: new Date(),
+//     });
+//   }
 
-  tableListDataSource.reverse();
-  return tableListDataSource;
-};
+//   tableListDataSource.reverse();
+//   return tableListDataSource;
+// };
 
-let tableListDataSource = genList(1, 100);
+// let tableListDataSource = genList(1, 100);
+
+let tableListDataSource = Mock.mock({
+  "data|20": [
+    {
+      "id|+1": 0, 
+      'name': '@cname()',
+      'desc': "@csentence(20,50)",
+      "createdAt": "@date('yyyy-MM-dd')",
+      "updatedAt": "@date('yyyy-MM-dd')",
+    }
+  ],
+}).data.reverse()
 
 function getList(req, res, u) {
   let realUrl = u;
