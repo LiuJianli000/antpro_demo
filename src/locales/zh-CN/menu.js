@@ -52,4 +52,5 @@ export default {
   'menu.可选择列表格': '可选择列表格',
   'menu.HOOK': 'HOOK',
   'menu.拖拽': '拖拽',
+  'menu.mock': 'mock'
 };

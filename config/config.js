@@ -96,6 +96,12 @@ export default defineConfig({
               component: './DragElement'
             },
             {
+              path: '/test-mock',
+              name: 'mock',
+              icon: 'block',
+              component: './TestMock'
+            },
+            {
               component: './404',
             },
           ],
