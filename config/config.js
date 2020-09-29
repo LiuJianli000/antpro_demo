@@ -90,10 +90,10 @@ export default defineConfig({
               component: './Hook'
             },
             {
-              path: '/drag',
-              name: '拖拽',
+              path: '/communicate',
+              name: '通信',
               icon: 'block',
-              component: './DragElement'
+              component: './Communicate'
             },
             {
               path: '/test-mock',
