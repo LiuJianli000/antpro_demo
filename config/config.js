@@ -102,6 +102,12 @@ export default defineConfig({
               component: './TestMock'
             },
             {
+              path: '/scrollbars',
+              name: 'Scrollbars',
+              icon: 'block',
+              component: './Scrollbars'
+            },
+            {
               component: './404',
             },
           ],

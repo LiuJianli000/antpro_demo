@@ -51,6 +51,7 @@ export default {
   'menu.editor.koni': '拓扑编辑器',
   'menu.可选择列表格': '可选择列表格',
   'menu.HOOK': 'HOOK',
-  'menu.拖拽': '通信',
-  'menu.mock': 'mock'
+  'menu.通信': '通信',
+  'menu.mock': 'mock',
+  'menu.Scrollbars': 'Scrollbars'
 };
